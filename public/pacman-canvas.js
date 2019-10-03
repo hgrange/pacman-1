@@ -60,7 +60,7 @@ function geronimo() {
                var color = "";
                color = res;
             
-               $("#myCanvas").css("background", "red");
+               $("#myCanvas").css("background", color);
 
            }
         })
@@ -1397,7 +1397,7 @@ function checkAppCache() {
     }
 
     $(document).ready(function() {
-
+        $("#myCanvas").css("background", "yellow");
         $.ajaxSetup({ mimeType: "application/json" });
 
         $.ajaxSetup({beforeSend: function(xhr){
