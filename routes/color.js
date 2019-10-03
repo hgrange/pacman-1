@@ -13,7 +13,7 @@ router.use(function timeLog (req, res, next) {
     next();
 })
 
-router.get('/colors', function(req,res,next) {
+router.get('/colors',urlencodedParser,function(req,res,next) {
        
         var color = process.env.COLOR || 'green'
         console.log("called color : "+color)
