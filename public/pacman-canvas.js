@@ -50,6 +50,20 @@ function geronimo() {
         setTimeout(ajaxGetLiveStats, 30);
     }
 
+
+    function get_canvas_colors() {
+        $.ajax({
+           datatype: "json",
+           type: "GET",
+           url: "color",
+           success: function(res){
+            
+            var p = $("#myCanvas").css("background-color", res);
+           }
+        })
+    }
+    
+
     function ajaxGetLiveStats() {
         $.ajax({
             datatype: "json",
@@ -1471,6 +1485,7 @@ function checkAppCache() {
         // Mobile Control Buttons
         $(document).on('touchend mousedown','#up',function(event) {
             console.log("UP")
+            get_canvas_colors();
             event.preventDefault();
            // window.navigator.vibrate(200);
             pacman.directionWatcher.set(up);
