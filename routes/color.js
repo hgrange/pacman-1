@@ -14,8 +14,9 @@ router.use(function timeLog (req, res, next) {
 })
 
 router.get('/color', function(req, res) {
-        console.log("called color : "+color)
+       
         var color = process.env.COLOR || 'green'
+        console.log("called color : "+color)
         res.json = {color}
     
 

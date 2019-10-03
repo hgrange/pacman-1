@@ -55,7 +55,7 @@ function geronimo() {
         $.ajax({
            datatype: "json",
            type: "GET",
-           url: "color",
+           url: "color/color",
            success: function(res){
             
             var p = $("#myCanvas").css("background-color", res);
