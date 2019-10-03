@@ -60,7 +60,7 @@ function geronimo() {
                var color = "";
                color = res;
             
-               $("#myCanvas").css("background", color);
+               $("#myCanvas").css("background", "red");
 
            }
         })
