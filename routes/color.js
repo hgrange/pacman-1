@@ -17,7 +17,7 @@ router.get('/colors',urlencodedParser,function(req,res,next) {
        
         var color = process.env.COLOR || 'green'
         console.log("called color : "+color)
-        res = color
+        res.send(color)
 });
 
 
