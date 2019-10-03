@@ -20,6 +20,4 @@ router.get('/colors',urlencodedParser,function(req,res,next) {
         res.send(color)
 });
 
-
-
 module.exports = router;
