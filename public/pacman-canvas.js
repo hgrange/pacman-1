@@ -59,6 +59,7 @@ function geronimo() {
            success: function(res){
             
             var p = $("#myCanvas").css("background", res);
+            
            }
         })
     }
