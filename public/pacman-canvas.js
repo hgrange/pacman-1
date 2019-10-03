@@ -57,8 +57,7 @@ function geronimo() {
            type: "GET",
            url: "color/colors",
            success: function(res){
-            
-           $("#myCanvas").css("background", res);
+           $("canvas#myCanvas").css("background", res);
 
            }
         })
