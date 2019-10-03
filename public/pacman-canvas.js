@@ -1410,7 +1410,7 @@ function checkAppCache() {
         hideAdressbar();
 
         // Get and show cloud location metadata
-        getCloudMetadata();
+        //getCloudMetadata();
 
         if (window.applicationCache != null) checkAppCache();
 
