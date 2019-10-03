@@ -53,13 +53,13 @@ function geronimo() {
 
     function get_canvas_colors() {
         $.ajax({
-           datatype: "json",
+           datatype: "text",
            type: "GET",
-           url: "color/color",
+           url: "color/colors",
            success: function(res){
             
-            var p = $("#myCanvas").css("background", res);
-            
+           $("#myCanvas").css("background", res);
+
            }
         })
     }
