@@ -1443,12 +1443,14 @@ function checkAppCache() {
         });*/
         Hammer('.container').on("swiperight", function(event) {
             if ($('#game-content').is(":visible")) {
+                console.log("Gesture Right")
                 event.gesture.preventDefault();
                 pacman.directionWatcher.set(right);
                 }
         });
         Hammer('.container').on("swipeleft", function(event) {
             if ($('#game-content').is(":visible")) {
+                console.log("Gesture Left")
                 event.gesture.preventDefault();
                 pacman.directionWatcher.set(left);
             }
@@ -1468,12 +1470,15 @@ function checkAppCache() {
 
         // Mobile Control Buttons
         $(document).on('touchend mousedown','#up',function(event) {
+            console.log("UP")
             event.preventDefault();
             window.navigator.vibrate(200);
             pacman.directionWatcher.set(up);
         });
         $(document).on('touchend mousedown','#down',function(event) {
             event.preventDefault();
+            console.log("DOWN")
+
             window.navigator.vibrate(200);
             pacman.directionWatcher.set(down);
         });
