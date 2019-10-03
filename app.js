@@ -46,7 +46,7 @@ app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error');
 });
-
+/*
 Database.connect(app, function(err) {
     if (err) {
         console.log('Failed to connect to database server');
@@ -55,5 +55,5 @@ Database.connect(app, function(err) {
     }
 
 });
-
+*/
 module.exports = app;
