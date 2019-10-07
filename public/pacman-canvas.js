@@ -52,6 +52,7 @@ function geronimo() {
 
 
     function get_canvas_colors() {
+      
         $.ajax({
            datatype: "text",
            type: "GET",
@@ -59,11 +60,16 @@ function geronimo() {
            success: function(res){
                var color = "";
                color = res;
+                console.log("RES "+res);
+                console.log("COLOR "+color);
+                $("#myCanvas").css("background", color);
+                $( "#myCanvas" ).load( "myCanvas" );
+               //$("#myCanvas").load(location.href +'?toto=titi');
+
             
-               $("#myCanvas").css("background", color);
 
            }
-        })
+        });
     }
     
 
@@ -1487,11 +1493,11 @@ function checkAppCache() {
 
         // Mobile Control Buttons
         $(document).on('touchend mousedown','#up',function(event) {
-            console.log("UP")
             get_canvas_colors();
             event.preventDefault();
            // window.navigator.vibrate(200);
             pacman.directionWatcher.set(up);
+            
         });
         $(document).on('touchend mousedown','#down',function(event) {
             event.preventDefault();
