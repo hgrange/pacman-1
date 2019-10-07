@@ -1403,7 +1403,7 @@ function checkAppCache() {
     }
 
     $(document).ready(function() {
-        $("#myCanvas").css("background", "yellow");
+        //$("#myCanvas").css("background", "yellow");
         $.ajaxSetup({ mimeType: "application/json" });
 
         $.ajaxSetup({beforeSend: function(xhr){
