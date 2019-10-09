@@ -1121,7 +1121,7 @@ function geronimo() {
         this.mouth = 1; /* Switches between 1 and -1, depending on mouth closing / opening */
         this.dirX = right.dirX;
         this.dirY = right.dirY;
-        this.lives = 3;
+        this.lives = 1;
         this.stuckX = 0;
         this.stuckY = 0;
         this.frozen = false;        // used to play die Animation
