@@ -22,8 +22,8 @@ app.set('view engine', 'jade');
 // Handle root web server's public directory
 app.use('/', express.static(path.join(__dirname, 'public')));
 
-//app.use('/highscores', highscores);
-//app.use('/user', user);
+app.use('/highscores', highscores);
+app.use('/user', user);
 app.use('/location', loc);
 app.use('/color',color_route)
 
