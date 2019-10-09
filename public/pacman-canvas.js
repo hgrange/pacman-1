@@ -62,8 +62,8 @@ function geronimo() {
                color = res;
                 console.log("RES "+res);
                 console.log("COLOR "+color);
-                $("#myCanvas").css("background", color);
-                $( "#myCanvas" ).load( "myCanvas" );
+               // $("#myCanvas").css("background", color);
+                //$( "#myCanvas" ).load( "myCanvas" );
                //$("#myCanvas").load(location.href +'?toto=titi');
 
             
@@ -1403,7 +1403,6 @@ function checkAppCache() {
     }
 
     $(document).ready(function() {
-        //$("#myCanvas").css("background", "yellow");
         $.ajaxSetup({ mimeType: "application/json" });
 
         $.ajaxSetup({beforeSend: function(xhr){
