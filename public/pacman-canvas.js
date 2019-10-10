@@ -40,7 +40,7 @@ function geronimo() {
              for (var i = 0; i < msg.length; i++) {
                 var rank = i + 1;
                 // Can we make this shorter?
-                $("#highscore-table tbody").append("<tr><td id='rank'>" + rank + "</td><td id='playername'>" + msg[i]['name'] + "</td><td id='cloudprovider'>" + msg[i]['cloud'] + "</td><td id='zone'>" + msg[i]['zone'] + "</td><td id='host'>" + msg[i]['host'] + "</td><td id='score'>" + msg[i]['score'] + "</td></tr>");
+                $("#highscore-table tbody").append("<tr><td id='rank'>" + rank + "</td><td id='playername'>" + msg[i]['name'] + "</td><td id='cloudprovider'>" + msg[i]['cloud'] + "</td><td id='zone'>" + msg[i]['zone'] +  "</td><td id='score'>" + msg[i]['score'] + "</td></tr>");
              }
            }
         });
@@ -82,7 +82,7 @@ function geronimo() {
                 $("#livestats-table tbody").text("");
                 for (var i = 0; i < msg.length; i++) {
                     var userId = i + 1;
-                    $("#livestats-table tbody").append("<tr><td id='userid'>" + userId + "</td><td id='cloudprovider'>" + msg[i]['cloud'] + "</td><td id='zone'>" + msg[i]['zone'] + "</td><td id='host'>" + msg[i]['host'] + "</td><td id='score'>" + msg[i]['score'] + "</td><td id='level'>" + msg[i]['level'] + "</td><td id='lives'>" + msg[i]['lives'] + "</td><td id='elapsedtime'>" + msg[i]['et'] + "</td><td id='txncount'>" + msg[i]['txncount'] + "</td></tr>");
+                    $("#livestats-table tbody").append("<tr><td id='userid'>" + userId + "</td><td id='cloudprovider'>" + msg[i]['cloud'] + "</td><td id='zone'>" + msg[i]['zone'] + msg[i]['host'] + "</td><td id='score'>" + msg[i]['score'] + "</td><td id='level'>" + msg[i]['level'] + "</td><td id='lives'>" + msg[i]['lives'] + "</td><td id='elapsedtime'>" + msg[i]['et'] + "</td><td id='txncount'>" + msg[i]['txncount'] + "</td></tr>");
                 }
 
                 if (game.user.livestats) {
