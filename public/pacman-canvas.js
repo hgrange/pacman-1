@@ -544,7 +544,7 @@ function geronimo() {
             if (state === 0) {
                 this.score.set(0);
                 this.score.refresh(".score");
-                pacman.lives = 3;
+                pacman.lives = 1;
                 game.level = 1;
                 this.refreshLevel(".level");
                 game.gameOver = false;
