@@ -51,27 +51,18 @@ function geronimo() {
     }
 
 
-    function get_canvas_colors() {
-      
+    function getCanvasColors() {
         $.ajax({
-           datatype: "text",
+           dataType:"json",
            type: "GET",
            url: "color/colors",
-           success: function(res){
-               var color = "";
-               color = res;
-                console.log("RES "+res);
-                console.log("COLOR "+color);
-               // $("#myCanvas").css("background", color);
-                //$( "#myCanvas" ).load( "myCanvas" );
-               //$("#myCanvas").load(location.href +'?toto=titi');
-
-            
-
-           }
-        });
+           success: function(data) {
+            $("#myCanvas").css("background", data);
+        }
+        })
     }
     
+
 
     function ajaxGetLiveStats() {
         $.ajax({
@@ -192,6 +183,9 @@ function geronimo() {
         setTimeout(ajaxGetCloudMetadata, 30);
     }
 
+    function getCanvasColorDelay(){
+        setInterval(getCanvasColors,10000);
+    }
     function updateUserStats() {
         ajaxUpdateUserStats(game.user.id, game.cloudProvider, game.zone, game.host,
                             game.score.score, game.level, pacman.lives,
@@ -301,7 +295,7 @@ function geronimo() {
         this.map;
         this.pillCount;                // number of pills
         this.monsters;
-        this.level = 1;
+        this.level = 10;
         this.refreshLevel = function(h) {
             $(h).html("Level: "+this.level);
         };
@@ -545,7 +539,7 @@ function geronimo() {
                 this.score.set(0);
                 this.score.refresh(".score");
                 pacman.lives = 1;
-                game.level = 1;
+                game.level = 10;
                 this.refreshLevel(".level");
                 game.gameOver = false;
             }
@@ -1417,9 +1411,11 @@ function checkAppCache() {
         hideAdressbar();
 
         // Get and show cloud location metadata
-        getCloudMetadata(); //ddd
+      getCloudMetadata();
+      getCanvasColors();
+      getCanvasColorDelay();
 
-        if (window.applicationCache != null) checkAppCache();
+       if (window.applicationCache != null) checkAppCache();
 
         /* -------------------- EVENT LISTENERS -------------------------- */
 
@@ -1492,11 +1488,10 @@ function checkAppCache() {
 
         // Mobile Control Buttons
         $(document).on('touchend mousedown','#up',function(event) {
-            get_canvas_colors();
             event.preventDefault();
            // window.navigator.vibrate(200);
             pacman.directionWatcher.set(up);
-            
+
         });
         $(document).on('touchend mousedown','#down',function(event) {
             event.preventDefault();

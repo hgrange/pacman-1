@@ -10,14 +10,17 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false })
 // middleware that is specific to this router
 router.use(function timeLog (req, res, next) {
     console.log('Time: ', Date());
+    res.set('Cache-Control', 'no-store, no-cache, must-revalidate, private');
     next();
 })
 
 router.get('/colors',urlencodedParser,function(req,res,next) {
        
-        var color = process.env.COLOR || 'green'
-        console.log("called color : "+color)
-        res.send(color)
+        var color = process.env.COLOR || 'yellow';
+        console.log("called color : "+color);
+        //res.status(200);
+        res.json(color);
+        
 });
 
 module.exports = router;
