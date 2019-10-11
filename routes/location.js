@@ -28,9 +28,6 @@ router.get('/metadata', function(req, res, next) {
 
 function getCloudMetadata(callback) {
     console.log('getCloudMetadata');
-    // Try Openstack first
-    getOpenStackCloudMetadata(function(err, c, z) {
-        if (err) {
             // Try AWS next
             getAWSCloudMetadata(function(err, c, z) {
                 if (err) {
@@ -56,11 +53,7 @@ function getCloudMetadata(callback) {
                 } else {
                     callback(c, z); // Running in AWS
                 }
-            });
-        } else {
-            callback(c, z); // Running in OpenStack
-        }
-    });
+            });     
 }
 
 function getOpenStackCloudMetadata(callback) {
