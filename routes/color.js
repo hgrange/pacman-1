@@ -16,7 +16,7 @@ router.use(function timeLog (req, res, next) {
 
 router.get('/colors',urlencodedParser,function(req,res,next) {
        
-        var color = 'cyan';
+        var color = 'rgb(197, 33, 33)';
         console.log("called color : "+color);
         //res.status(200);
         res.json(color);
