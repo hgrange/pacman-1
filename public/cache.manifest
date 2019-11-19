@@ -4,10 +4,10 @@ CACHE MANIFEST
 CACHE:
 
 # HTML
-index.html
+# index.html
 
 # CSS
-pacman-canvas.css
+# pacman-canvas.css
 
 # external resources
 style.css
