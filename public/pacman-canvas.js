@@ -1414,7 +1414,7 @@ function checkAppCache() {
 
         // Get and show cloud location metadata
       getCloudMetadata();
-      // getCanvasColors();
+      getCanvasColors();
       getCanvasColorDelay();
 
        if (window.applicationCache != null) checkAppCache();

@@ -93,7 +93,7 @@ tr:hover {
 #elapsedtime {}
 #txncount {}
 
-#myCanvas { border: none; display: block; background : rgb(59, 108, 170) ; width: 100%;  height: auto;}
+#myCanvas { border: none; display: block; background : rgb(197, 33, 33) ; width: 100%;  height: auto;}
 #canvas-container { position: relative;}
 #canvas-overlay-container {
     position: absolute;
