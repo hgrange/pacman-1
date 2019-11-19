@@ -14,6 +14,8 @@ router.use(function timeLog(req, res, next) {
 router.get('/metadata', function(req, res, next) {
     console.log('[GET /loc/metadata]');
     var h = getHost();
+    var i = process.env.MY_IMAGE;
+    console.log('Querying ' + i + ' for cloud data');
     getCloudMetadata(function(c, z) {
         console.log(`CLOUD: ${c}`);
         console.log(`ZONE: ${z}`);
@@ -21,7 +23,8 @@ router.get('/metadata', function(req, res, next) {
         res.json({
             cloud: c,
             zone: z,
-            host: h
+            host: h,
+            image: i 
         });
     });
 });

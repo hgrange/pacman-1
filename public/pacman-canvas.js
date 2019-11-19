@@ -121,6 +121,8 @@ function geronimo() {
                 game.zone = msg['zone'];
                 $(".host").append("<b>" + msg['host'] + "</b>");
                 game.host = msg['host'];
+                $(".image").append("<b>" + msg['image'] + "</b>");
+                game.image = msg['image'];
             },
             error: function() {
                 $(".cloudprovider").append("<b>unknown</b>");
@@ -1412,7 +1414,7 @@ function checkAppCache() {
 
         // Get and show cloud location metadata
       getCloudMetadata();
-      getCanvasColors();
+      // getCanvasColors();
       getCanvasColorDelay();
 
        if (window.applicationCache != null) checkAppCache();
