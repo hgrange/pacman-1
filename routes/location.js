@@ -15,8 +15,15 @@ router.get('/metadata', function(req, res, next) {
     console.log('[GET /loc/metadata]');
     var h = getHost();
     var i = process.env.MY_IMAGE;
+    var message = '';
+    if (process.env.MESSAGE) {
+      message = process.env.MESSAGE;
+    }
     console.log('Querying ' + i + ' for cloud data');
     getCloudMetadata(function(c, z) {
+        if (message != '') {
+          c = c + ' - ' + message;
+        }
         console.log(`CLOUD: ${c}`);
         console.log(`ZONE: ${z}`);
         console.log(`HOST: ${h}`);
