@@ -2,24 +2,24 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    name: pacman_git
-  name: pacman_git
+    name: pacmangit
+  name: pacmangit
   labels:
-    app: pacman_git
+    app: pacmangit
 spec:
   replicas: 1
   selector:
     matchLabels:
-      name: pacman_git
+      name: pacmangit
   template:
     metadata:
       labels:
-        name: pacman_git
+        name: pacmangit
     spec:
-      serviceAccount: pacman_git
+      serviceAccount: pacmangit
       containers:
       - image: quay.io/ifont/pacman-nodejs-app:latest
-        name: pacman_git
+        name: pacmangit
         ports:
         - containerPort: 8080
         env:
