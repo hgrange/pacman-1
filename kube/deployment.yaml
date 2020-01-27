@@ -18,7 +18,7 @@ spec:
     spec:
       serviceAccount: pacmangit
       containers:
-      - image: quay.io/ifont/pacman-nodejs-app:latest
+      - image: docker.io/rfontain/pacman:v1
         name: pacmangit
         ports:
         - containerPort: 8080
