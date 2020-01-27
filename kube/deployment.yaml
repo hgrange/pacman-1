@@ -19,6 +19,7 @@ spec:
       serviceAccount: pacmangit
       containers:
       - image: docker.io/rfontain/pacman:v1
+        imagePullPolicy: Always
         name: pacmangit
         ports:
         - containerPort: 8080
@@ -48,7 +49,7 @@ spec:
             fieldRef:
               fieldPath: spec.nodeName
         #rouge
-        - name: COLOUR
+        - name: COLOR
           value: "rgb(197, 33, 33)"
         #bleue
         # value: "rgb(59, 108, 170)"
