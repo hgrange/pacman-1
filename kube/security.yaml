@@ -21,7 +21,6 @@ metadata:
 subjects:
 - kind: ServiceAccount
   name: pacmangitpwd
-  
   namespace: pacmangit
 roleRef:
   kind: ClusterRole
