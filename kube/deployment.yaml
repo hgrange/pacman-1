@@ -54,8 +54,8 @@ spec:
         #bleue
           #value: "rgb(59, 108, 170)"
         - name: MY_IMAGE
-          value: ibm
+          value: RedHat
         - name: MESSAGE
-          value: "Everything is up2date !"
+          value: "Initial Version"
 
         
