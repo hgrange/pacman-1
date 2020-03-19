@@ -3,6 +3,7 @@ kind: Service
 metadata:
   labels:
     name: pacmangit
+    #rrr
   name: pacmangit
   namespace: pacmangit
 spec:
